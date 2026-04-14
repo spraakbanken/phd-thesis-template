@@ -1,0 +1,59 @@
+% Modified from Felix's code
+\part*{References}
+%\label{part:references}
+
+
+%%%%%%%%%%%%%%%%%%
+%                %
+%  Bibliography  %
+%                %
+%%%%%%%%%%%%%%%%%%
+
+\chapter*{Bibliography}
+% This adds the bibliography to the table of contents
+\addcontentsline{toc}{chapter}{\numberline{}Bibliography}
+% Printing the bibliography
+\printbibliography[title={Bibliography}]
+
+\cleardoublepage
+
+
+%%%%%%%%%%%%%%%
+%             %
+%  Temporary  %
+%             %
+%%%%%%%%%%%%%%%
+
+% Adds all missing acronyms and glossary entries
+% This should be commente for the final version!!
+\glsaddall
+
+
+%%%%%%%%%%%%%%
+%            %
+%  Acronyms  %
+%            %
+%%%%%%%%%%%%%%
+
+% This adds the list of acronyms to the table of contents
+\addcontentsline{toc}{chapter}{\numberline{}List of Acronyms}
+
+% Printing the list of acronyms
+\setglossarystyle{list}
+\printglossary[type=\acronymtype,title={List of Acronyms}]
+
+\cleardoublepage
+
+
+%%%%%%%%%%%%%%
+%            %
+%  Glossary  %
+%            %
+%%%%%%%%%%%%%%
+
+% This adds the glossary to the table of contents
+\addcontentsline{toc}{chapter}{\numberline{}Glossary}
+
+% Printing the glossary
+\setglossarystyle{listgroup}
+\printglossary[title={Glossary}]

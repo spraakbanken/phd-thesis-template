@@ -1,0 +1,90 @@
+% Epigraphs are those nice quotes at the beginning of a chapter
+% This package lets you do that
+\usepackage{epigraph}
+
+% This allows us to use bold math symbols
+\usepackage{bm}
+
+% This is a funny setting that allows us to show more or less items in the Table of Contents
+% You should *only* use this during development, it should be commented out for any official hand-ins
+% I added 5 as that shows everything up to the subparagraph level
+%\setcounter{tocdepth}{5}
+
+% This allows us to have footnotes on separate files
+\usepackage{sepfootnotes}
+\import{\BibPath}{footnotes}
+
+% This allows you to create a glossary
+\usepackage[xindy,acronym]{glossaries}
+\glsdisablehyper
+\makeglossaries
+\import{\BibPath}{glossary}
+
+% Preventing widows and orphans in text
+\usepackage[all]{nowidow}
+
+% This allows you to automatically build up an index
+%\usepackage{makeidx}
+%\usepackage[columns=1]{idxlayout}
+%\makeindex
+
+
+% This fixes the annoying headers for the references section
+\defbibheading{bibliography}[\bibname]{
+    \markboth{#1}{#1}
+    \extramarks{\refname}{\refname}
+}
+
+
+%\setlength{\headheight}{25.3pt}
+
+
+% Better control over floats
+%\usepackage{placeins}
+
+% This lets you add footnotes to floats
+% DO SO SPARINGLY OR IT WILL SCREW UP YOUR FOOTNOTES!!!
+%\usepackage{tablefootnote}
+
+
+% These allow you to add notes in the margins
+\usepackage[textsize=small]{todonotes}
+\usepackage{marginnote}
+\usepackage{etoolbox}
+
+
+% The original todo command pushes everything to the side, which is not desirable
+\newtoggle{lmargin}
+\newcommand{\alternatingtodo}[2][]{
+  \iftoggle{lmargin}
+  {
+    \todo[#1]{#2}
+    \togglefalse{lmargin}
+  }{
+    {
+      \let\marginpar\marginnote
+      \reversemarginpar
+      \todo[#1]{#2}
+    }
+    \toggletrue{lmargin}
+  }
+}
+
+
+% I also predefined some kinds of sidenotes to help you get off the ground
+% They are color-coded, but also have a header describing the sort of note in case of colorblindness
+
+% Teal-colored for questions
+%\newcommand{\todoQuestion}[2][]{\alternatingtodo[backgroundcolor=teal!40,,linecolor=teal,#1]{\textbf{Question:}\\#2}}
+\newcommand{\todoQuestion}[2][]{}
+
+% Orange-colored for pending stuff
+\newcommand{\todoPending}[2][]{\alternatingtodo[backgroundcolor=orange!40,linecolor=orange,#1]{\textbf{Pending:}\\#2}}
+
+% Yellow-colored for things that should be paid attention to
+%\newcommand{\todoNote}[2][]{\alternatingtodo[backgroundcolor=yellow!40,linecolor=orange!70,#1]{\textbf{NOTE!}\\#2}}
+\newcommand{\todoNote}[2][]{}
+
+% Pink-colored for things that should be paid attention to
+%\newcommand{\todoComment}[2][]{\alternatingtodo[backgroundcolor=pink!40,linecolor=red!70,#1]{\textbf{Comment}\\#2}}
+\newcommand{\todoComment}[2][]{}

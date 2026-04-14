@@ -1,0 +1,104 @@
+%TEX TS-program = lualatex
+
+% Note that you need to use LuaLaTeX for this to even compile
+\documentclass{DL}
+
+% This lets us offload the preamble so our working space is cleaner
+\usepackage{import}
+
+
+% Write the paths to your folders here
+\newcommand{\PreamblePath}{./Preamble}
+\newcommand{\PrefacePath}{./Preface}
+\newcommand{\KappaPath}{./Kappa}
+\newcommand{\CompilationPath}{./Compilation}
+\newcommand{\BibPath}{./Bibliography}
+\newcommand{\AppendixPath}{./Appendices}
+% We can use \import{path}{file} instead of
+% \input{path/file} to have more freedom when reorganizing files
+
+
+% These are packages that Ricardo uses all of the time and that he considers useful to add by default
+% Feel free to modify it if it doesn't suit your needs
+% You can find the latest version of this file here:
+% https://github.com/rimusa/useful_stuff/blob/main/latex/packages.tex
+\import{\PreamblePath}{boilerplate-packages}
+
+
+% Additional packages should be added either below or in the imported file
+\import{\PreamblePath}{imported-packages}
+
+
+% Special variables for your thesis
+% You'll need to modify this file to set your name, the title of the thesis, etc.
+\import{\PreamblePath}{thesis-variables}
+
+
+% Import your bib files here
+\import{\PreamblePath}{bib-files}
+
+
+% Aliases for the papers included within
+% Add your own here following the examples
+\defcitealias{example_entry}{\hyperref[paper:paper1]{Paper I}}
+
+% Here we finally begin the document
+\begin{document}
+
+
+%%%%%%%%%%%
+%         %
+%  Title  %
+%         %
+%%%%%%%%%%%
+
+% This generates everything up to the ToC
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%
+%                %
+%  Front Matter  %
+%                %
+%%%%%%%%%%%%%%%%%%
+
+% For formatting purposes(?)
+\frontmatter
+
+% Preface-related stuff
+\import{\PrefacePath}{preface}
+
+% This generates the table of contents
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%
+%               %
+%  Main Matter  %
+%               %
+%%%%%%%%%%%%%%%%%
+
+% For formatting purposes(?)
+\mainmatter
+
+% Kappa
+\import{\KappaPath}{kappa}
+
+% Compilation Part
+\import{\CompilationPath}{compilation}
+
+% References
+\import{\BibPath}{main}
+
+% Thesis-wide appendices
+%Appendices go *after* the bibliography according to APA
+\import{\AppendixPath}{main}
+
+% Placeholders to avoid issues of undefined references
+% Comment this out if compiling the whole thesis
+%\input{placeholders}
+
+
+\backmatter
+
+\end{document}

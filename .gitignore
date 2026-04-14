@@ -1,0 +1,28 @@
+# LaTeX helper files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.bbl*
+*.bcf*
+*.blg
+*.xdv
+*.run.xml
+*.synctex*
+*.toc
+*.glo
+*.xdy
+*.acn
+
+# Apparently inkscape saves a lot of useless stuff
+svg-inkscape/*
+
+# We don't want to sync unnecessary PDF files
+main.pdf
+thesis.pdf
+
+# System files
+.DS_Store
+
+# The ACL Anthology bibfile is huge
+**/anthology.bib

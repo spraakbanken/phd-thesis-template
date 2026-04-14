@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %
+%    *****   Ricardo's Boilerplate Packages for LaTeX   *****     %
+%                                                                 %
+%                                                                 %
+%   You should copy-paste this block of code and add it at the    %
+%   beginning of your paper, right before the title and author.   %
+%                                                                 %
+%   Note that some of these have been added to the ACL template   %
+%   but not necessarily for other conference templates.           %
+%                                                                 %
+%                                                                 %
+%                     *****   Floats   *****                      %
+%                                                                 %
+%  More options for caption customization                         %
+\usepackage[tableposition=below]{caption}                         %
+%  Allows for captions in subfigures                              %
+\usepackage{subcaption}                                           %
+%  Lets you have numbered examples                                %
+\usepackage{expex}                                                %
+%  Allows you to force placement of floats with [H]               %
+\usepackage{float}                                                %
+%                                                                 %
+%                                                                 %
+%                     *****   Tables   *****                      %
+%                                                                 %
+%  Allows for sideways tables                                     %
+\usepackage{rotating}                                             %
+%  Nice tables                                                    %
+\usepackage{tabularx}                                             %
+%  Allows cells to span multiple rows                             %
+\usepackage{multirow}                                             %
+%  Allows cells to span multiple columns                          %
+\usepackage{multicol}                                             %
+%  Nicer-looking tables & more formatting options                 %
+\usepackage{booktabs}                                             %
+%  Adds more options for column formatting                        %
+\usepackage{array}                                                %
+%  Allows for tables to span multiple pages                       %
+\usepackage{longtable}                                            %
+%                                                                 %
+%                                                                 %
+%                     *****   Images   *****                      %
+%                                                                 %
+%  Better image management                                        %
+\usepackage{graphicx}                                             %
+%  Allows for svg files to be used                                %
+\usepackage[inkscapeversion=auto]{svg}                            %
+%                                                                 %
+%                                                                 %
+%                 *****   Text Formatting   *****                 %
+%                                                                 %
+%  Lets us set the font color                                     %
+\usepackage{xcolor}                                               %
+%  Does text highlighting                                         %
+\usepackage{soul}                                                 %
+%  Nice-looking boxes useful for prompts                          %
+\usepackage[most]{tcolorbox}                                      %
+%                                                                 %
+%                                                                 %
+%                   *****   Typography   *****                    %
+%                                                                 %
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+%  Fixes up urls and makes them look better                       %
+\usepackage{xurl}                                                 %
+%  Helps with layout & spacing                                    %
+\usepackage[nopatch=footnote]{microtype}                                            %
+%                                                                 %
+%                                                                 %
+%                      *****   Math   *****                       %
+%                                                                 %
+%  Adds support for special symbols used in math                  %
+\usepackage{amsfonts}                                             %
+%  Extra support for mathematical typesetting                     %
+\usepackage{amsmath}                                              %
+%                                                                 %
+%                                                                 %
+%                     *****   Others   *****                      %
+%                                                                 %
+%  For defining date variables                                    %
+\usepackage{datetime}                                             %
+%  Lets you do funky stuff with appendices                        %
+\usepackage{appendix}                                             %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Fixes spacing issues when dealing with longtables
+\captionsetup[longtable]{skip=1em}
+
+% Allows for use of fixed-witdth columns where the text wraps
+% The m{withdt} option from the array package
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
