@@ -13,6 +13,10 @@
 *.glo
 *.xdy
 *.acn
+*.acr
+*.alg
+*.glg
+*.gls
 
 # Apparently inkscape saves a lot of useless stuff
 svg-inkscape/*
