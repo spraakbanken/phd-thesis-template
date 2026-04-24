@@ -17,6 +17,7 @@
 *.alg
 *.glg
 *.gls
+*.out
 
 # Apparently inkscape saves a lot of useless stuff
 svg-inkscape/*
