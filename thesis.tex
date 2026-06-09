@@ -4,6 +4,8 @@
 \documentclass{DL}
 
 % Uncomment to make the numbering of each part start from 1
+% This might be confusing if you have several parts in your kappa
+% Uncomment the line before the compilation in that case
 %\makeatletter\@addtoreset{chapter}{part}\makeatother%
 
 % This lets us offload the preamble so our working space is cleaner
@@ -86,6 +88,12 @@
 
 % Kappa
 \import{\KappaPath}{kappa}
+
+% Uncomment these lines in case you want the numbering of the papers to start from 1
+%\setcounter{chapter}{0}
+%\renewcommand{\chaptername}{Paper}
+% Uncomment this line if you want the papers to be numbered using Roman numerals
+%\renewcommand{\thechapter}{\Roman{chapter}}
 
 % Compilation Part
 \import{\CompilationPath}{compilation}
