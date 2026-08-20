@@ -181,6 +181,7 @@
 \newcommand{\pubyear}[1]{\gdef\pub@year{#1}}
 \newcommand{\DLno}[1]{\gdef\@DL{#1}}
 \newcommand{\ISBN}[1]{\gdef\@ISBN{#1}}
+\newcommand{\ISBNd}[1]{\gdef\@ISBNd{#1}}
 \newcommand{\pubtypesetter}[1]{\gdef\@pubtypesetter{#1}}
 \newcommand{\CoverArtist}[1]{\gdef\@CoverArtist{#1}}
 \newcommand{\AuthorPhotographer}[1]{\gdef\@AuthorPhotographer{#1}}
