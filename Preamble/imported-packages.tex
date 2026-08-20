@@ -23,7 +23,8 @@
 \import{\BibPath}{glossary}
 
 % Preventing widows and orphans in text
-\usepackage[all]{nowidow}
+\usepackage[all]{nowidow}   % USE THIS ONLY AT THE END!!!!
+                            % Fixing things on your own will give you much better spacing
 
 % This allows you to automatically build up an index
 %\usepackage{makeidx}
@@ -90,3 +91,37 @@
 % Pink-colored for things that should be paid attention to
 %\newcommand{\todoComment}[2][]{\alternatingtodo[backgroundcolor=pink!40,linecolor=red!70,#1]{\textbf{Comment}\\#2}}
 \newcommand{\todoComment}[2][]{}
+
+
+% This allows us to hide stuff from the TOC
+\newcommand{\nocontentsline}[3]{}
+\newcommand\stoptoc{%
+   \let\origcontentsline\addcontentsline
+   \let\addcontentsline\nocontentsline
+}
+\newcommand\resumetoc{%
+   \let\addcontentsline\origcontentsline
+}
+
+
+% This allows us to use the RQs as references
+\makeatletter
+\newcommand{\labitem}[2]{%
+\def\@itemlabel{\textbf{#1}}
+\item
+\def\@currentlabel{#1}\label{#2}}
+\makeatother
+
+
+% This allows us to have max. two authors when citing
+% But displaying everyone correctly on the fullcite
+\makeatletter
+\DeclareCiteCommand{\longfullcite}
+  {\usebibmacro{prenote}}
+  {\usedriver
+     {\c@maxnames\blx@maxbibnames\relax
+      \DeclareNameAlias{sortname}{default}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+\makeatother
