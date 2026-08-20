@@ -233,7 +233,8 @@
   \newpage\thispagestyle{empty}
   {\sf\normalsize%
     \@pubname\ \@DL\par
-    ISBN \@ISBN\par
+    ISBN \@ISBN\ (PRINT)\par
+    \hphantom{ISBN} \@ISBN\ (ONLINE)\par
     ISSN \@ISSN\par
     E-publication $<$\@BookURL$>$ \par
     \vskip\baselineskip
