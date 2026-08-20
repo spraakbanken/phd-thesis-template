@@ -17,7 +17,6 @@
 *.alg
 *.glg
 *.gls
-*.out
 
 # Apparently inkscape saves a lot of useless stuff
 svg-inkscape/*
@@ -25,9 +24,13 @@ svg-inkscape/*
 # We don't want to sync unnecessary PDF files
 main.pdf
 thesis.pdf
+spikblad.pdf
 
 # System files
 .DS_Store
 
 # The ACL Anthology bibfile is huge
 **/anthology.bib
+
+# Other helper files
+LO_GU_cenSV-eps-converted-to.pdf
