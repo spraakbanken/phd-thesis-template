@@ -28,10 +28,9 @@
     backend=biber,
     style=langsci-unified,
     citestyle=langsci-unified,
-% Determines the max number of authors to display in the bibliography
+% Determines the max number of authors to display in the Reference section
 % 99 people is silly, the LLM papers have much less than this one and it's already a problem
-% Reduced it to 10 for the time being
-	  maxbibnames=50, % This one is useless - 
+	  maxbibnames=50,
 % For name disambiguation
 % If John Smith and Mary Smith published in 2000 and we cite them:
 % "false" means they are cited as Smith 2000a and Smith 2000b
